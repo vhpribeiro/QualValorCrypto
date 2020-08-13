@@ -1,0 +1,47 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Hosting;
+using QualValorCrypto.Aplicacao.CryptoMoedas.Consultas;
+using QualValorCrypto.Aplicacao.CryptoMoedas.InterfaceRepositorios;
+using QualValorCrypto.Infra;
+using QualValorCrypto.Infra.Repositorios;
+
+namespace QualValorCrypto.API
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.TryAddScoped<ICryptoMoedaRepositorio, CryptoMoedaRepositorio>();
+            services.TryAddScoped<IConsultaDeCryptoMoeda, ConsultaDeCryptoMoeda>();
+            services.AddControllers();
+            services.AddMvc();
+        }
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+        }
+    }
+}
