@@ -13,7 +13,7 @@ namespace QualValorCrypto.Aplicacao.CryptoMoedas.Consultas
             _cryptoMoedaRepositorio = cryptoMoedaRepositorio;
         }
 
-        public CryptoMoeda ObterCryptoMoedaAsync(ObjectId id) =>
-           _cryptoMoedaRepositorio.ObterCryptoMoedaAsync(id);
+        public CryptoMoeda ObterCryptoMoedaAsync(string id) =>
+           _cryptoMoedaRepositorio.ObterPeloIdentificador(id);
     }
 }

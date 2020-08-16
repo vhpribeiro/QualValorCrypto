@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using QualValorCrypto.Dominio;
@@ -13,11 +14,13 @@ namespace QualValorCrypto.Infra
     
         protected MongoDbBase(IConfiguration configuration, string nomeDaColecao)
         {
-            Mongo = new MongoClient(configuration.GetSection("Database:Url").ToString());
-            DataBase = Mongo.GetDatabase(configuration.GetSection("Database:Name").ToString());
+            Mongo = new MongoClient(configuration.GetValue<string>("Database:Url"));
+            DataBase = Mongo.GetDatabase(configuration.GetValue<string>("Database:Name"));
             Collection = DataBase.GetCollection<T>(nomeDaColecao);
         }
-    
-        protected virtual T ObterPeloIdentificador(ObjectId id) => Collection.Find(x => x.Id == id).FirstOrDefault();
+
+        public virtual T ObterPeloIdentificador(string id) => Collection.Find(x => x.Id == id).FirstOrDefault();
+        
+        public virtual async Task InserirItemAsync(T item) => await Collection.InsertOneAsync(item);
     }
 }

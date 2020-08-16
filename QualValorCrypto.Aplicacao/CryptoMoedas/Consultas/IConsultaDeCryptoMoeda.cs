@@ -5,6 +5,6 @@ namespace QualValorCrypto.Aplicacao.CryptoMoedas.Consultas
 {
     public interface IConsultaDeCryptoMoeda
     {
-        public CryptoMoeda ObterCryptoMoedaAsync(ObjectId id);
+        public CryptoMoeda ObterCryptoMoedaAsync(string id);
     }
 }

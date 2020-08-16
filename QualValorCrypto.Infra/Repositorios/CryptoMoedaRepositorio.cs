@@ -12,10 +12,5 @@ namespace QualValorCrypto.Infra.Repositorios
         public CryptoMoedaRepositorio(IConfiguration configuration) : base(configuration, NomeDaColecao)
         {
         }
-        
-        public CryptoMoeda ObterCryptoMoedaAsync(ObjectId id)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

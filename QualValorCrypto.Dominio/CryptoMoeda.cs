@@ -7,7 +7,7 @@ namespace QualValorCrypto.Dominio
         public decimal Valor { get; set; }
         public string Nome { get; set; }
         
-        public CryptoMoeda(ObjectId id, string nome, decimal valor)
+        public CryptoMoeda(string id, string nome, decimal valor)
         {
             Id = id;
             Nome = nome;

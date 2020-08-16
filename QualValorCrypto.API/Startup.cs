@@ -4,9 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using QualValorCrypto.Aplicacao.CryptoMoedas.Comandos;
 using QualValorCrypto.Aplicacao.CryptoMoedas.Consultas;
 using QualValorCrypto.Aplicacao.CryptoMoedas.InterfaceRepositorios;
-using QualValorCrypto.Infra;
 using QualValorCrypto.Infra.Repositorios;
 
 namespace QualValorCrypto.API
@@ -24,8 +24,9 @@ namespace QualValorCrypto.API
         {
             services.TryAddScoped<ICryptoMoedaRepositorio, CryptoMoedaRepositorio>();
             services.TryAddScoped<IConsultaDeCryptoMoeda, ConsultaDeCryptoMoeda>();
-            services.AddControllers();
-            services.AddMvc();
+            services.TryAddScoped<ICriacaoDeCryptoMoeda, CricaoDeCryptoMoeda>();
+            services.AddControllers().AddNewtonsoftJson();
+            services.AddMvc().AddNewtonsoftJson();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
