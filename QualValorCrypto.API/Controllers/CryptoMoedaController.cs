@@ -11,12 +11,12 @@ namespace QualValorCrypto.API.Controllers
     public class CryptoMoedaController : Controller
     {
         private readonly IConsultaDeCryptoMoeda _consultaDeCryptoMoeda;
-        private readonly ICriacaoDeCryptoMoeda _criacaoDeCryptoMoeda;
+        private readonly IControleDeCryptoMoeda _controleDeCryptoMoeda;
 
-        public CryptoMoedaController(IConsultaDeCryptoMoeda consultaDeCryptoMoeda, ICriacaoDeCryptoMoeda criacaoDeCryptoMoeda)
+        public CryptoMoedaController(IConsultaDeCryptoMoeda consultaDeCryptoMoeda, IControleDeCryptoMoeda controleDeCryptoMoeda)
         {
             _consultaDeCryptoMoeda = consultaDeCryptoMoeda;
-            _criacaoDeCryptoMoeda = criacaoDeCryptoMoeda;
+            _controleDeCryptoMoeda = controleDeCryptoMoeda;
         }
         
         [HttpGet]
@@ -30,7 +30,7 @@ namespace QualValorCrypto.API.Controllers
         [Route("")]
         public async Task<IActionResult> InserirCryptoMoeda([FromBody] CryptoMoeda cryptoMoeda)
         {
-            await _criacaoDeCryptoMoeda.InserirItemAsync(cryptoMoeda);
+            await _controleDeCryptoMoeda.InserirCryptoMoedaAsync(cryptoMoeda);
             return Ok();
         }
     }

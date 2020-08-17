@@ -24,7 +24,7 @@ namespace QualValorCrypto.API
         {
             services.TryAddScoped<ICryptoMoedaRepositorio, CryptoMoedaRepositorio>();
             services.TryAddScoped<IConsultaDeCryptoMoeda, ConsultaDeCryptoMoeda>();
-            services.TryAddScoped<ICriacaoDeCryptoMoeda, CricaoDeCryptoMoeda>();
+            services.TryAddScoped<IControleDeCryptoMoeda, ControleDeCryptoMoeda>();
             services.AddControllers().AddNewtonsoftJson();
             services.AddMvc().AddNewtonsoftJson();
         }

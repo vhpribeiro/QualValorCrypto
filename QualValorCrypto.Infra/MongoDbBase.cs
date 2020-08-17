@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Data.Common;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using QualValorCrypto.Dominio;
 
@@ -10,7 +10,7 @@ namespace QualValorCrypto.Infra
     {
         private IMongoDatabase DataBase { get; }
         private MongoClient Mongo { get; }
-        private IMongoCollection<T> Collection { get; }
+        protected IMongoCollection<T> Collection { get; }
     
         protected MongoDbBase(IConfiguration configuration, string nomeDaColecao)
         {

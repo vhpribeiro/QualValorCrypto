@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using MongoDB.Bson;
 using QualValorCrypto.Dominio;
 
 namespace QualValorCrypto.Aplicacao.CryptoMoedas.InterfaceRepositorios
@@ -8,5 +7,6 @@ namespace QualValorCrypto.Aplicacao.CryptoMoedas.InterfaceRepositorios
     {
         public CryptoMoeda ObterPeloIdentificador(string id);
         public Task InserirItemAsync(CryptoMoeda item);
+        public Task UpdateAsync(decimal novoValor, string nomeDaMoeda);
     }
 }
