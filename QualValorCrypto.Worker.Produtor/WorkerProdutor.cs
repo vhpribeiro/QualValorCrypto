@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using QualValorCrypto.Infra.Mensageria.RabbitMq;
 using QualValorCrypto.Dominio;
 
 namespace QualValorCrypto.Worker.Produtor
 {
-    class Program
-    {
-        static void Main(string[] args)
+    class WorkerProdutor
+    {   
+        static void Main()
         {
-            Console.WriteLine("******* Enviando mensagens para o Rabbit **********");
-
-            var produtorRabbitMq = new ClienteRabbitMqProdutor();
+            var produtorRabbitMq = ClienteRabbitMqFactory.Criar();
             
-            var bitcoin = new CryptoMoeda("154654879879456", "Bitcoin", new decimal(656598.82));
+            var bitcoin = new CryptoMoeda("154654879879456", "Bitcoin", new decimal(696598.82));
             var moedasParaSeremAtualizadas = new List<CryptoMoeda>
             {
                 bitcoin

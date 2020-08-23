@@ -1,5 +1,4 @@
-﻿using System.Data.Common;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 using QualValorCrypto.Dominio;

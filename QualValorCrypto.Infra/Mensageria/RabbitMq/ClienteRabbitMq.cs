@@ -57,5 +57,11 @@ namespace QualValorCrypto.Infra.Mensageria.RabbitMq
             };
             _modelo.BasicConsume(NomeDaFila, false, consumidor);
         }
+        
+        public void Publicar(string mensagem)
+        {
+            ConfigurarFila(NomeDaFila, _modelo);
+            _modelo.BasicPublish("", NomeDaFila, null, Encoding.UTF8.GetBytes(mensagem));
+        }
     }
 }
