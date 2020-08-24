@@ -23,7 +23,7 @@ namespace QualValorCrypto.API.Controllers
         [Route("{id}")]
         public IActionResult ObterCryptoMoeda(string id)
         {
-            return Ok(_consultaDeCryptoMoeda.ObterCryptoMoedaAsync(id));
+            return Ok(_consultaDeCryptoMoeda.ObterCryptoMoedaPeloIdentificador(id));
         }
 
         [HttpPost]

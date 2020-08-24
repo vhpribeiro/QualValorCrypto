@@ -6,6 +6,6 @@ namespace QualValorCrypto.Aplicacao.CryptoMoedas.Comandos
     public interface IControleDeCryptoMoeda
     {
         public Task InserirCryptoMoedaAsync(CryptoMoeda item);
-        public Task AtualizarCryptoMoeda(decimal novoValor, string nomeDaMoeda);
+        public Task AtualizarValorPeloNomeAsync(decimal novoValor, string nomeDaMoeda);
     }
 }

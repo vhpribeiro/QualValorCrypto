@@ -51,7 +51,7 @@ namespace QualValorCrypto.Infra.Mensageria.RabbitMq
                 {
                     var cryptoMoeda = JsonConvert.DeserializeObject<CryptoMoeda>(mensagemDaFila);
                     _modelo.BasicAck(evento.DeliveryTag, true);
-                    _controleDeCryptoMoeda.AtualizarCryptoMoeda(cryptoMoeda.Valor, cryptoMoeda.Nome);
+                    _controleDeCryptoMoeda.AtualizarValorPeloNomeAsync(cryptoMoeda.Valor, cryptoMoeda.Nome);
                 }
                 
             };

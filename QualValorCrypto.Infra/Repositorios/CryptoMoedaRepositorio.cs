@@ -14,7 +14,7 @@ namespace QualValorCrypto.Infra.Repositorios
         {
         }
 
-        public async Task UpdateAsync(decimal novoValor, string nomeDaMoeda)
+        public async Task AtualizarValorPeloNomeAsync(decimal novoValor, string nomeDaMoeda)
         {
             var cryptoMoedaAtualziada = Builders<CryptoMoeda>.Update.Set("Valor", novoValor);
             await Collection.UpdateOneAsync(x => x.Nome == nomeDaMoeda, cryptoMoedaAtualziada);

@@ -22,7 +22,7 @@ namespace QualValorCrypto.Infra.Mensageria.RabbitMq
                 .AddLogging()
                 .AddScoped<IControleDeCryptoMoeda, ControleDeCryptoMoeda>()
                 .AddScoped<ICryptoMoedaRepositorio, CryptoMoedaRepositorio>()
-                .AddScoped<IConfiguration>(_ => Configuration)
+                .AddScoped(_ => Configuration)
                 .BuildServiceProvider();
             
             return new ClienteRabbitMq(serviceProvider.GetService<IControleDeCryptoMoeda>());

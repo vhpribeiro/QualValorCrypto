@@ -7,6 +7,6 @@ namespace QualValorCrypto.Aplicacao.CryptoMoedas.InterfaceRepositorios
     {
         public CryptoMoeda ObterPeloIdentificador(string id);
         public Task InserirItemAsync(CryptoMoeda item);
-        public Task UpdateAsync(decimal novoValor, string nomeDaMoeda);
+        public Task AtualizarValorPeloNomeAsync(decimal novoValor, string nomeDaMoeda);
     }
 }

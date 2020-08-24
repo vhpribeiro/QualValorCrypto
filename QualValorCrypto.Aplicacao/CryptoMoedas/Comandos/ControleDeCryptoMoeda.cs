@@ -15,7 +15,7 @@ namespace QualValorCrypto.Aplicacao.CryptoMoedas.Comandos
 
         public async Task InserirCryptoMoedaAsync(CryptoMoeda cryptoMoeda) => await _cryptoMoedaRepositorio.InserirItemAsync(cryptoMoeda);
 
-        public async Task AtualizarCryptoMoeda(decimal novoValor, string nomeDaMoeda) =>
-            await _cryptoMoedaRepositorio.UpdateAsync(novoValor, nomeDaMoeda);
+        public async Task AtualizarValorPeloNomeAsync(decimal novoValor, string nomeDaMoeda) =>
+            await _cryptoMoedaRepositorio.AtualizarValorPeloNomeAsync(novoValor, nomeDaMoeda);
     }
 }

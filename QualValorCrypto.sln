@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualValorCrypto.Worker.Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualValorCrypto.Worker.Produtor", "QualValorCrypto.Worker.Produtor\QualValorCrypto.Worker.Produtor.csproj", "{F5B75028-549C-4BCA-8FAC-A9E54B18E453}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualValorCrypto.TesteDeUnidade", "QualValorCrypto.TesteDeUnidade\QualValorCrypto.TesteDeUnidade.csproj", "{0243EF1B-3D0B-47E8-AD9A-768B1D3B9236}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,7 @@ Global
 		{36919B1D-84B4-44C8-8A67-4DDD1DAED17D} = {A4791DBC-B878-49EA-BDD5-EFC5CDF167B5}
 		{02039FEC-7EBF-458F-B308-39E633AA8D80} = {A4791DBC-B878-49EA-BDD5-EFC5CDF167B5}
 		{F5B75028-549C-4BCA-8FAC-A9E54B18E453} = {A4791DBC-B878-49EA-BDD5-EFC5CDF167B5}
+		{0243EF1B-3D0B-47E8-AD9A-768B1D3B9236} = {1987D3C0-9C72-49F7-A3B1-981292DFC60C}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{35AB4DEA-7099-4DB0-A8A8-E12CE4E07DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -54,5 +57,9 @@ Global
 		{F5B75028-549C-4BCA-8FAC-A9E54B18E453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5B75028-549C-4BCA-8FAC-A9E54B18E453}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5B75028-549C-4BCA-8FAC-A9E54B18E453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0243EF1B-3D0B-47E8-AD9A-768B1D3B9236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0243EF1B-3D0B-47E8-AD9A-768B1D3B9236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0243EF1B-3D0B-47E8-AD9A-768B1D3B9236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0243EF1B-3D0B-47E8-AD9A-768B1D3B9236}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
