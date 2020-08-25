@@ -7,18 +7,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Bogus" Version="30.0.4" />
         <PackageReference Include="ExpectedObjects" Version="2.3.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.7" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
-        <PackageReference Include="Moq" Version="4.14.5" />
-        <PackageReference Include="Nosbor.FluentBuilder" Version="1.1.0" />
         <PackageReference Include="xunit" Version="2.4.0" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
         <PackageReference Include="coverlet.collector" Version="1.0.1" />
+        <PackageReference Include="Mongo2Go" Version="2.2.12" />
+        <PackageReference Include="MongoDB.Driver" Version="2.11.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\QualValorCrypto.Aplicacao\QualValorCrypto.Aplicacao.csproj" />
+      <ProjectReference Include="..\QualValorCrypto.API\QualValorCrypto.API.csproj" />
       <ProjectReference Include="..\QualValorCrypto.Dominio\QualValorCrypto.Dominio.csproj" />
       <ProjectReference Include="..\QualValorCrypto.Infra\QualValorCrypto.Infra.csproj" />
     </ItemGroup>
