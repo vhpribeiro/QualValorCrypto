@@ -18,4 +18,4 @@ O projeto é pequeno e bem simples, nesse cenário não compensaria criar muitos
 - Arquitetura dividida em camadas (API, Infra, Aplicação e Domínio)
 
 ## Observações
-Foram criados dois workers que simulam serviços que atualizam o banco através da mensageria ~consumidor e produtor~, ambos se encontram no projeto 'Worker'.
+Foram criados dois workers que simulam serviços que atualizam o banco através da mensageria ,**consumidor e produtor**, ambos se encontram no projeto 'Worker'.
