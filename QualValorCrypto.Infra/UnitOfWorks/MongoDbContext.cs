@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using MongoDB.Driver;
 
 namespace QualValorCrypto.Infra.UnitOfWorks
 {
     public class MongoDbContext : IMongoDbContext
     {
-        public IClientSessionHandle Session { get; set; }
         private readonly List<Func<Task>> _comandos;
-        private readonly MongoClient _mongoClient;
 
-        public MongoDbContext(IConfiguration configuration)
+        public MongoDbContext()
         {
-            _mongoClient = new MongoClient(configuration.GetValue<string>("Database:Url"));
             _comandos = new List<Func<Task>>();
         }
 
