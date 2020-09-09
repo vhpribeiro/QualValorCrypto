@@ -7,7 +7,9 @@ using Microsoft.Extensions.Hosting;
 using QualValorCrypto.Aplicacao.CryptoMoedas.Comandos;
 using QualValorCrypto.Aplicacao.CryptoMoedas.Consultas;
 using QualValorCrypto.Aplicacao.CryptoMoedas.InterfaceRepositorios;
+using QualValorCrypto.Infra;
 using QualValorCrypto.Infra.Repositorios;
+using QualValorCrypto.Infra.UnitOfWorks;
 
 namespace QualValorCrypto.API
 {
@@ -22,6 +24,8 @@ namespace QualValorCrypto.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.TryAddScoped<IMongoDbContext, MongoDbContext>();
+            services.TryAddScoped<IUnitOfWork, UnitOfWork>();
             services.TryAddScoped<ICryptoMoedaRepositorio, CryptoMoedaRepositorio>();
             services.TryAddScoped<IConsultaDeCryptoMoeda, ConsultaDeCryptoMoeda>();
             services.TryAddScoped<IControleDeCryptoMoeda, ControleDeCryptoMoeda>();

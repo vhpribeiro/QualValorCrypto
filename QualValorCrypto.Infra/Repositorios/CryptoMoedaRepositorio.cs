@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 using QualValorCrypto.Aplicacao.CryptoMoedas.InterfaceRepositorios;
 using QualValorCrypto.Dominio;
+using QualValorCrypto.Infra.UnitOfWorks;
 
 namespace QualValorCrypto.Infra.Repositorios
 {
@@ -10,7 +11,7 @@ namespace QualValorCrypto.Infra.Repositorios
     {
         private static string NomeDaColecao => "Crypto";
         
-        public CryptoMoedaRepositorio(IConfiguration configuration) : base(configuration, NomeDaColecao)
+        public CryptoMoedaRepositorio(IConfiguration configuration, IMongoDbContext mongoDbContext) : base(mongoDbContext, configuration, NomeDaColecao)
         {
         }
 
