@@ -15,7 +15,7 @@ O projeto é pequeno e bem simples, nesse cenário não compensaria criar muitos
 - MongoDbGo - Para testes de integração
 - RabbitMq
 - xUnit - Teste de unidade e teste de integração
-- Arquitetura dividida em camadas (API, Infra, Aplicação e Domínio)
+- Onion Architecture (API, Infra, Aplicação e Domínio)
 - Unit of Work
 
 ## Observações
